@@ -1,5 +1,5 @@
 import json
-import Funções as f
+import Funcoes as f
 view = f.Ler_archive("users.json")
 view_pacientes = f.Ler_archive("pacientes.json")
 view_medicos= f.Ler_archive("consultas.json")
