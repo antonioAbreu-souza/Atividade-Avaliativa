@@ -11,8 +11,8 @@ def Adicionar_archive(dicionario, arquivo):
 #Menu usuarios.
 def menu_users():
     print("1- Adminstrador")
-    print("2- Recepcionista")
-    print("3- Médico")
+    print("2- Médico")
+    print("3- Recepcionista")
 
 def validar_admin(lista):
      login = False
