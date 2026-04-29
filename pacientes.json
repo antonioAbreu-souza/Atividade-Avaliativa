@@ -1,0 +1,8 @@
+[{
+    "id": 1,
+    "nome": "Nome do Cliente",
+    "idade": 35,
+    "cpf": "000000000",
+    "telefone": "0000000000",
+    "endereço": "Rua A, 123"
+}]
