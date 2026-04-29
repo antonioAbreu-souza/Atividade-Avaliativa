@@ -24,5 +24,4 @@ while True:
                     elif op1 == "4":
                         f.reset_password(view)
                     elif op1 == "5":
-                        for i in view:
                             f.view_users(view)
