@@ -27,17 +27,7 @@ while True:
                     elif op1 == "5":
                             f.view_users(view)
                 elif op == "2":
-                    name = input("Nome do médico: ")
-                    especial = input("Digite a especialidade do médico: ")
-                    crm = input("digite a crm")
-                    dados = { "id_medico": Id_Global,
-                            "name": name,
-                             "especial": especial,
-                             "crm": crm
-                            }
-                    Id_Global +=1
-                    view.append(dados)
-                    f.Adicionar_archive(view, "users.json")
+                    f.cadastrar_medico(view,Id_Global)
                     
         
                             
