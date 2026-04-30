@@ -75,19 +75,20 @@ def reset_password(lista):
 def view_users(lista):
     for i in lista:
         print(f"Nome: {i["user"]} Nível: {i["nivel"]}")
-def cadastrar_medico(lista,id):
+def cadastrar_medico(lista):
+    
     name = input("Nome do médico: ")
     especial = input("Digite a especialidade do médico: ")
     crm = input("digite a crm")
-    
-    dados = { "id_medico": id,
+    id_medico = len(lista)+1
+    dados = { "id_medico": id_medico,
                 "name": name,
                 "especial": especial,
                 "crm": crm,
                         }
-    id +=1
+    
     lista.append(dados)
-    Adicionar_archive(lista,"users.json")      
+    Adicionar_archive(lista,"medicos.json")      
      
 
 
