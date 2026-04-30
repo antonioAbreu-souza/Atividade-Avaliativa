@@ -28,6 +28,7 @@ while True:
                             f.view_users(view)
                 elif op == "2":
                     f.cadastrar_medico(view,Id_Global)
+                    print("test")
                     
         
                             
