@@ -27,9 +27,11 @@ while True:
                     elif op1 == "5":
                             f.view_users(view)
                 elif op == "2":
-                 f.cadastrar_medico(view_medico)
-                    
-                        
-                    
+                    f.medicos_cdt()
+                    op = input("Digite o que deseja alterar: ")
+                    if op =="1":
+                        f.cadastrar_medico(view_medico)
+                    elif op =="2":
+                        f.Editar_medico(view_medico)
         
                             

@@ -76,7 +76,6 @@ def view_users(lista):
     for i in lista:
         print(f"Nome: {i["user"]} Nível: {i["nivel"]}")
 def cadastrar_medico(lista):
-    
     name = input("Nome do médico: ")
     especial = input("Digite a especialidade do médico: ")
     crm = input("digite a crm")
@@ -86,20 +85,44 @@ def cadastrar_medico(lista):
                 "especial": especial,
                 "crm": crm,
                         }
-    
     lista.append(dados)
     Adicionar_archive(lista,"medicos.json")      
-     
+def Editar_medico(lista):
+    for p in lista:
+        print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")
+        op = int(input("Digite o id do médico que deseja "))
+        for p in lista:
+           if op == p["id_medico"]:
+                print("--------------O que deseja alterar? --------------")
+                print("1- Nome")
+                print("2- Especialidade")
+                print("3- Crm")
+                op2 = input("digite a opção: ")
+                if op2 == "1":
+                    nome = input("DIgite a nova especialidade")
+                    p["name"] = nome
+                    Adicionar_archive(lista, "medicos.json")
+                elif op2 == "2":
+                    especialidade = input("DIgite a nova especialidade")
+                    p["especialidade"] = especialidade
+                    Adicionar_archive(lista, "medicos.json")
+                elif op2 == "3":
+                    crm = input("Digite o novo crm: ")
+                    p["crm"] = crm
+                    Adicionar_archive(lista, "medicos.json")
+
+    for p in lista:
+        print(f"id: {p["id_medico"]} nome do medico: {p["name"]} especialidade: {p["especialidade"]} crm: {p["crm"]}")
 
 
 #cadastrar médicos: admin
 def medicos_cdt():
+    print("--------------O que deseja alterar? --------------")
     print("1-Cadastrar médicos   ")
-    print("2-Editar usuários    ")
-    print("3-Editar médicos     ")
-    print("4-Excluir médicos      ")
-    print("5-Listar médicos cadastrados   ")
-    
+    print("2-Editar médicos     ")
+    print("3-Excluir médicos      ")
+    print("4-Listar médicos cadastrados   ")
+    print("--------------------------------------------------")
 
 
 

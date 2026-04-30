@@ -1,6 +1,6 @@
 [{
     "id": 1,
-    "nome": "Nome do Cliente",
+    "name": "Nome do Cliente",
     "idade": 35,
     "cpf": "000000000",
     "telefone": "0000000000",
