@@ -1,6 +1,6 @@
 import json
 import Funcoes as f
-Id_Global = 1
+id_global = 1
 view = f.Ler_archive("users.json")
 view_pacientes = f.Ler_archive("pacientes.json")
 view_medicos= f.Ler_archive("consultas.json")
@@ -27,7 +27,9 @@ while True:
                     elif op1 == "5":
                             f.view_users(view)
                 elif op == "2":
-                    f.cadastrar_medico(view,Id_Global)
+                 f.cadastrar_medico(view)
+                    
+                        
                     
         
                             
