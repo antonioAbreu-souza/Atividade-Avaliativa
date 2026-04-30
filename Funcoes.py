@@ -82,7 +82,7 @@ def cadastrar_medico(lista):
     id_medico = len(lista)+1
     dados = { "id_medico": id_medico,
                 "name": name,
-                "especial": especial,
+                "especialidade": especial,
                 "crm": crm,
                         }
     lista.append(dados)

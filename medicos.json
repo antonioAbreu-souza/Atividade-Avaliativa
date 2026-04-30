@@ -2,7 +2,13 @@
   {
     "id_medico": 1,
     "name": "dudu",
-    "especialidade": "Cabecudo",
-    "crm": "123657"
+    "especialidade": "Cardiologista",
+    "crm": "1234"
+  },
+  {
+    "id_medico": 2,
+    "name": "dudu",
+    "especialidade": "",
+    "crm": ""
   }
 ]

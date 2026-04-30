@@ -33,5 +33,19 @@ while True:
                         f.cadastrar_medico(view_medico)
                     elif op =="2":
                         f.Editar_medico(view_medico)
-        
+                    elif op =="3":
+                        for p in view_medico:
+                            print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")
                             
+                        op = int(input("Digite o Id do medico que deseja remover"))
+                        for i in view_medico:
+                            if op == i["id_medico"]:
+                                view_medico.pop(op-1)
+                                f.Adicionar_archive(view_medico, "medicos.json")
+                                print(f"Usuario {p["name"]} excluido com sucesso")
+                            else:
+                                print("Id inexistente")
+                    elif op == "4":
+                        for p in view_medico:
+                            print("----------------Lista de médicos ativos----------------")
+                            print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")
