@@ -47,5 +47,4 @@ while True:
                                 print("Id inexistente")
                     elif op == "4":
                         for p in view_medico:
-                            print("----------------Lista de médicos ativos----------------")
                             print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")

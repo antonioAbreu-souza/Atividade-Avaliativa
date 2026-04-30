@@ -99,7 +99,7 @@ def Editar_medico(lista):
             print("3- Crm")
             op2 = input("digite a opção: ")
             if op2 == "1":
-                    nome = input("DIgite a nova especialidade")
+                    nome = input("DIgite o novo Nome")
                     p["name"] = nome
                     Adicionar_archive(lista, "medicos.json")
             elif op2 == "2":
