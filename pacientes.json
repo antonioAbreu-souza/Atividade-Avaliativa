@@ -1,8 +1,18 @@
-[{
+[
+{
     "id": 1,
     "name": "Nome do Cliente",
     "idade": 35,
     "cpf": "000000000",
     "telefone": "0000000000",
-    "endereço": "Rua A, 123"
-}]
+    "endereco": "Rua A, 123"
+}, 
+{
+    "id": 2,
+    "name":"Rafael",
+    "idade": 19,
+    "cpf": "000000000",
+    "telefone": "0000000000",
+    "endereco": "Rua A, 123"
+}
+]

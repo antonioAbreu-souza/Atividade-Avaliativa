@@ -6,9 +6,15 @@
     "crm": "1234"
   },
   {
-    "id_medico": 2,
-    "name": "dudao",
-    "especialidade": "cardiologist",
-    "crm": "1235341"
+    "id_medico": 3,
+    "name": "rafael",
+    "especialidade": "neuro cirurgiao",
+    "crm": "12345"
+  },
+  {
+    "id_medico": 4,
+    "name": "medico",
+    "especialidade": "123",
+    "crm": "123"
   }
 ]

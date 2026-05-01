@@ -29,13 +29,36 @@ def cadastrar_user(lista):
     name = input("Digite o nome do Usuario: ")
     password = input("Cadastre a senha: ")
     nivel = input("Digite o nível da área: ")
-    dados = {"id": id_users,
+    id_user = len(lista)+1
+    dados = {"id": id_user,
             "user": name,
             "password": password,
             "nivel": nivel}
     lista.append(dados)
-    id_users(lista)
     Adicionar_archive(lista, "users.json")
+def editar_user(lista):
+    for p in lista:
+        print(f"id: {p["id"]}, nome do usuario: {p["user"]}, password: {p["password"]} e nivel {p["nivel"]}")
+    op = int(input("Digite o id do usuario que deseja "))
+    for i in lista:
+        if op == i["id"]:
+            print("1- Novo nome")
+            print("2- Nova senha")
+            print("3- Alterar nível")
+            op = input("DIgite a opção: ")
+            if op == "1":
+                nome = input("Digite o novo nome")
+                i["user"] = nome
+                Adicionar_archive(lista, "users.json")
+            elif op == "2":
+                password = input("DIgite a nova senha: ")
+                i["password"] = password
+                Adicionar_archive(lista, "users.json")
+            elif op == "3":
+                nivel = input("Digite a nova area: ")
+                i["nivel"] = nivel
+                Adicionar_archive(lista, "users.json")
+
 def op_cadastrar_user():
     print("--------------O que deseja alterar? --------------")
     print("1-Cadastrar usuários do sistema  ")
@@ -51,7 +74,6 @@ def Remove_user(lista):
     for i in lista:
         if op == i["id"]:
             lista.pop(op-1)
-            id_users(lista)
             Adicionar_archive(lista, "users.json")
 def options():
     print("--------------------------------------------------")
@@ -175,8 +197,3 @@ def Relatórios():
     print("Consultas canceladas no período")
     print("pacientes atendidos no dia")
     
-def id_users(lista):
-    id = 0
-    for i in lista:
-        id +=1
-        i["id"] = id
