@@ -5,17 +5,28 @@
     "data": "24/04/2026",
     "hora": "14:00",
     "status": "agendada"
-},{"id": 2,
+},
+{
+    "id": 2,
     "id_paciente": 2,
     "id_medico": 1,
     "data": "25/04/2026",
     "hora": "14:00",
-    "status": "cancelada"},
-    {"id": 3,
-    "id_paciente": 3,
+    "status": "cancelado"},
+{
+    "id": 3,
+    "id_paciente": 2,
     "id_medico": 1,
     "data": "25/04/2026",
     "hora": "14:00",
-    "status": "agendada"
+    "status": "finalizado"
+},
+{
+    "id": 4,
+    "id_paciente": 2,
+    "id_medico": 1,
+    "data": "25/04/2026",
+    "hora": "14:00",
+    "status": "finalizado"
 }
 ]

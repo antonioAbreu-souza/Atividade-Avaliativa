@@ -98,6 +98,23 @@ while True:
                         print(f"Total de pacientes cadastrados: {len(view_consultas)}")
                     elif op == "4":
                         print(f"total de médicos ativos: {len(view_medico)}")
+    elif op == "2":   
+                op = input("Digite a data de hoje: ")
+                consultas = 0
+                for p in view_consultas:
+                    if p["data"][:len(op)] == op:
+                        consultas +=1
+                        print(f"Total de consultas hoje:{consultas}")
+                        print(f"Pacientes cadastrados: {len(view_pacientes)}")
+                        print(f"Médicos ativos: {len(view_medico)} ")
+                        finalizada = 0
+                        for p in view_consultas:
+                            if p["status"] == "finalizado":
+                                finalizada +=1
+                        print(f"Atendimentos finalizados hoje: {finalizada}")
+                        canceladas = 0
+                        for p in view_consultas:
+                            if p["status"] == "cancelado":
+                                canceladas +=1
+                        print(f"O total de consultas canceladas hoje: {canceladas}")
                     
-                        
-                            
