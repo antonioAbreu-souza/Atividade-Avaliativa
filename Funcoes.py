@@ -65,7 +65,7 @@ def op_cadastrar_user():
     print("2-Editar usuários    ")
     print("3-Excluir usuários   ")
     print("4-Resetar senha de usuários    ")
-    print("5-Listar todos os usuários    ")
+    print("5-Listar todos os usuários     ")
     print("--------------------------------------------------")
 def Remove_user(lista):
     for p in lista:
@@ -82,6 +82,7 @@ def options():
     print("3- pacientes")
     print("4- Consultas")
     print("5- Relatorios")
+    print("6- Sair")
     print("--------------------------------------------------")
 def reset_password(lista):
     for i in lista:

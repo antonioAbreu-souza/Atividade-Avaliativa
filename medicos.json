@@ -1,20 +1,8 @@
 [
   {
     "id_medico": 1,
-    "name": "Dudao",
-    "especialidade": "caridologista",
+    "name": "Rafael",
+    "especialidade": "professor",
     "crm": "1234"
-  },
-  {
-    "id_medico": 3,
-    "name": "rafael",
-    "especialidade": "neuro cirurgiao",
-    "crm": "12345"
-  },
-  {
-    "id_medico": 4,
-    "name": "medico",
-    "especialidade": "123",
-    "crm": "123"
   }
 ]

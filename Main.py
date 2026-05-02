@@ -18,7 +18,7 @@ while True:
                     f.op_cadastrar_user()
                     op1 = input("DIgite sua opção: ")
                     if op1 == "1":
-                     f.cadastrar_user(view)
+                        f.cadastrar_user(view)
                     elif op1 == "2":
                         f.editar_user(view)
                     elif op1 == "3":
@@ -26,7 +26,10 @@ while True:
                     elif op1 == "4":
                         f.reset_password(view)
                     elif op1 == "5":
-                            f.view_users(view)
+                        f.view_users(view)
+                    elif op1 == "6":
+                        print("Saindo")
+                        break
                 elif op == "2":
                     f.medicos_cdt()
                     op = input("Digite o que deseja alterar: ")
@@ -98,6 +101,9 @@ while True:
                         print(f"Total de pacientes cadastrados: {len(view_consultas)}")
                     elif op == "4":
                         print(f"total de médicos ativos: {len(view_medico)}")
+                elif op =="6":
+                    print("Saindo")
+                    break        
     elif op == "2":   
                 op = input("Digite a data de hoje: ")
                 consultas = 0
