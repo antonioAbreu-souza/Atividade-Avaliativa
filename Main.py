@@ -27,9 +27,7 @@ while True:
                         f.reset_password(view)
                     elif op1 == "5":
                         f.view_users(view)
-                    elif op1 == "6":
-                        print("Saindo")
-                        break
+                    
                 elif op == "2":
                     f.medicos_cdt()
                     op = input("Digite o que deseja alterar: ")
