@@ -11,8 +11,8 @@ def Adicionar_archive(dicionario, arquivo):
 #Menu usuarios.
 def menu_users():
     print("1- Adminstrador")
-    print("2- Médico")
-    print("3- Recepcionista")
+    print("2- Recepcionista")
+    print("3- Médico")
 
 def validar_admin(lista):
      login = False
@@ -29,20 +29,43 @@ def cadastrar_user(lista):
     name = input("Digite o nome do Usuario: ")
     password = input("Cadastre a senha: ")
     nivel = input("Digite o nível da área: ")
-    dados = {"id": id_users,
+    id_user = len(lista)+1
+    dados = {"id": id_user,
             "user": name,
             "password": password,
             "nivel": nivel}
     lista.append(dados)
-    id_users(lista)
     Adicionar_archive(lista, "users.json")
+def editar_user(lista):
+    for p in lista:
+        print(f"id: {p["id"]}, nome do usuario: {p["user"]}, password: {p["password"]} e nivel {p["nivel"]}")
+    op = int(input("Digite o id do usuario que deseja "))
+    for i in lista:
+        if op == i["id"]:
+            print("1- Novo nome")
+            print("2- Nova senha")
+            print("3- Alterar nível")
+            op = input("DIgite a opção: ")
+            if op == "1":
+                nome = input("Digite o novo nome")
+                i["user"] = nome
+                Adicionar_archive(lista, "users.json")
+            elif op == "2":
+                password = input("DIgite a nova senha: ")
+                i["password"] = password
+                Adicionar_archive(lista, "users.json")
+            elif op == "3":
+                nivel = input("Digite a nova area: ")
+                i["nivel"] = nivel
+                Adicionar_archive(lista, "users.json")
+
 def op_cadastrar_user():
     print("--------------O que deseja alterar? --------------")
     print("1-Cadastrar usuários do sistema  ")
     print("2-Editar usuários    ")
     print("3-Excluir usuários   ")
     print("4-Resetar senha de usuários    ")
-    print("5-Listar todos os usuários    ")
+    print("5-Listar todos os usuários     ")
     print("--------------------------------------------------")
 def Remove_user(lista):
     for p in lista:
@@ -51,7 +74,6 @@ def Remove_user(lista):
     for i in lista:
         if op == i["id"]:
             lista.pop(op-1)
-            id_users(lista)
             Adicionar_archive(lista, "users.json")
 def options():
     print("--------------------------------------------------")
@@ -60,6 +82,7 @@ def options():
     print("3- pacientes")
     print("4- Consultas")
     print("5- Relatorios")
+    print("6- Sair")
     print("--------------------------------------------------")
 def reset_password(lista):
     for i in lista:
@@ -175,8 +198,3 @@ def Relatórios():
     print("Consultas canceladas no período")
     print("pacientes atendidos no dia")
     
-def id_users(lista):
-    id = 0
-    for i in lista:
-        id +=1
-        i["id"] = id

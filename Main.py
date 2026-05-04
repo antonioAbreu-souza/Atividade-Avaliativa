@@ -121,3 +121,5 @@ while True:
                             if p["status"] == "cancelado":
                                 canceladas +=1
                         print(f"O total de consultas canceladas hoje: {canceladas}")
+                        print(f"O total de consultas canceladas hoje: {canceladas}")
+                    

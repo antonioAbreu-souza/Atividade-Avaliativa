@@ -4,5 +4,29 @@
     "id_medico": 1,
     "data": "24/04/2026",
     "hora": "14:00",
-    "status": "Agendada"
-}]
+    "status": "agendada"
+},
+{
+    "id": 2,
+    "id_paciente": 2,
+    "id_medico": 1,
+    "data": "25/04/2026",
+    "hora": "14:00",
+    "status": "cancelado"},
+{
+    "id": 3,
+    "id_paciente": 2,
+    "id_medico": 1,
+    "data": "25/04/2026",
+    "hora": "14:00",
+    "status": "finalizado"
+},
+{
+    "id": 4,
+    "id_paciente": 2,
+    "id_medico": 1,
+    "data": "25/04/2026",
+    "hora": "14:00",
+    "status": "finalizado"
+}
+]
