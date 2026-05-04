@@ -92,9 +92,9 @@ while True:
                     elif op == "2":
                         status = 0
                         for p in view_consultas:
-                            if p["status"] == "cancelada":
+                            if p["status"] == "cancelado":
                                 status += 1
-                            print(f"Total de consultas canceladas: {status}")
+                        print(f"Total de consultas canceladas: {status}")
                     elif op == "3":
                         print(f"Total de pacientes cadastrados: {len(view_consultas)}")
                     elif op == "4":
@@ -103,10 +103,10 @@ while True:
                     print("Saindo")
                     break        
     elif op == "2":   
-                op = input("Digite a data de hoje: ")
                 consultas = 0
                 for p in view_consultas:
-                    if p["data"][:len(op)] == op:
+                    op = input("Digite a data de hoje: ")
+                if p["data"][:len(op)] == op:
                         consultas +=1
                         print(f"Total de consultas hoje:{consultas}")
                         print(f"Pacientes cadastrados: {len(view_pacientes)}")
@@ -121,5 +121,4 @@ while True:
                             if p["status"] == "cancelado":
                                 canceladas +=1
                         print(f"O total de consultas canceladas hoje: {canceladas}")
-                        print(f"O total de consultas canceladas hoje: {canceladas}")
-                    
+                        
