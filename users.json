@@ -8,8 +8,8 @@
   },
   {
     "id": 2,
-    "user": "Julia",
-    "password": "Julia123",
-    "nivel": "Recepcionista"
+    "user": "julia",
+    "password": "12345",
+    "nivel": "recepcionista"
   }
 ]

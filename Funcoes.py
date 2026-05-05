@@ -13,17 +13,27 @@ def menu_users():
     print("1- Adminstrador")
     print("2- Recepcionista")
     print("3- Médico")
-
+def validar_recepcionista(lista):
+     login = False
+     user = input("Digite seu usuario: ")
+     password = input("Digite sua senha: ")
+     for p in lista:
+            if user == p["user"] and password == p["password"] and p["nivel"] == "recepcionista":
+                print(f"Bem vindo/a Sr {p["user"]}")
+                login = True
+            else:
+                print("Usuario ou Senha incorreta")
+            return login
 def validar_admin(lista):
      login = False
      user = input("Digite seu usuario: ")
      password = input("DIgite sua senha: ")
      for p in lista:
-            if user == p["user"] and password == p["password"]:
+            if user == p["user"] and password == p["password"] and p["nivel"] == "admin":
                 print(f"Bem vindo Sr {p["name"]}")
                 login = True
             else:
-                print("Senha Incorreta! ")
+                print("Usuario ou Senha incorreta ")
             return login
 def cadastrar_user(lista):
     name = input("Digite o nome do Usuario: ")

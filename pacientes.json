@@ -1,6 +1,6 @@
 [
 {
-    "id": 1,
+    "id_paciente": 1,
     "name": "Mauricio",
     "idade": 35,
     "cpf": "000000000",
@@ -8,7 +8,7 @@
     "endereco": "Rua A, 123"
 }, 
 {
-    "id": 2,
+    "id_paciente": 2,
     "name":"Rafael",
     "idade": 19,
     "cpf": "000000000",

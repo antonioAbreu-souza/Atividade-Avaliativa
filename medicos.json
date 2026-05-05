@@ -4,5 +4,11 @@
     "name": "Rafael",
     "especialidade": "professor",
     "crm": "1234"
+  },
+  {
+    "id_medico": 2,
+    "name": "Mauricio",
+    "especialidade": "professor",
+    "crm": "1234321"
   }
 ]
