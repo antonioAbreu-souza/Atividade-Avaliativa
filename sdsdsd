@@ -1,0 +1,54 @@
+    
+                # op_dia_consulta = input("digite a data de hoje :")
+                # consultas =0
+                # for i in view_consultas:
+                
+                #  if i["data"][:len(op)] == op:
+                #      consultas +=1
+                # print(f"----Pacientes cadastrados:{len(view_pacientes)}---")
+                # print(f"---Médicos ativos: {len(view_medico)}---")
+                # print(f"atendimenos finalizados do dia {i["finalizado"]}")
+                # print(f"Consultas canceladas hoje:{len(i["cancelado"])}")
+ 
+                    
+# Consultas hoje: X 
+# Pacientes cadastrados: X 
+# Médicos ativos: X 
+# Atendimentos finalizados hoje: X 
+# Consultas canceladas hoje: X 
+
+
+
+# # for i in view_consultas:
+#     print("--------------Menu--------")
+#     print(f"---data da consulta :{i["data"]}---")
+#     print(f"---Horario da consulta : {i["hora"]}--")
+#     print(f"----status da consulta : {i["status"]}--")
+    
+    
+    
+# print(f"-----consultas de hoje : {len(view_consultas)}----")
+# for i in view_pacientes:
+#     opp = input("digite seu nome:   ")
+#     if opp == i["name"]:
+#         print(f"----Pacientes cadastrados:---")
+#     else:
+#         print("----seu nome nao esta na lista---")
+#     if opp == i["name"]:
+#         dia_consulta = input("digite o dia da consulta--:")
+#     for i in view_consultas:
+#         if dia_consulta == i["data"]:
+#             print(f"esse dia temos essas consultas")
+#             print("--------------Menu--------")
+#             print(f"---data da consulta :{i["data"]== dia_consulta}---")
+#             print(f"---Horario da consulta : {i["hora"]}--")
+#             print(f"----status da consulta : {i["status"]}--")
+#         else:
+# #             print("nao temos essa consulta hoje ou digitado errado digite (00/00/0000)")
+    
+        
+# 
+#    
+
+# for i in view_consultas:
+    

@@ -46,7 +46,7 @@ while True:
                                 f.Adicionar_archive(view_medico, "medicos.json")
                                 print(f"Usuario {p["name"]} excluido com sucesso")
                             else:
-                                print("Id inexistente")
+                              print("Id inexistente")
                     elif op == "4":
                         for p in view_medico:
                             print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")
@@ -103,7 +103,7 @@ while True:
                     print("Saindo")
                     break        
     elif op == "2":   
-                op_dia_consulta = input("Digite a data de hoje: (DD/MM/AAAA) ")
+                op_dia_consulta = input("Digite a data de hoje: ex:(DD/MM/AAAA) ")
  
                 consultas_hoje = 0
                 finalizadas = 0
@@ -120,9 +120,9 @@ while True:
  
                 print(f"----Pacientes cadastrados: {len(view_pacientes)} ---")
                 print(f"----Médicos ativos: {len(view_medico)} ---")
-                print(f"Consultas do dia: {consultas_hoje}")
-                print(f"Consultas finalizadas hoje: {finalizadas}")
-                print(f"Consultas canceladas hoje: {canceladas}")
+                print(f"---Consultas do dia: {consultas_hoje}----")
+                print(f"----Consultas finalizadas hoje: {finalizadas}----")
+                print(f"---Consultas canceladas hoje: {canceladas}---")
  
                    
                 # op_dia_consulta = input("digite a data de hoje :")

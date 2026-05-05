@@ -46,7 +46,7 @@ while True:
                                 f.Adicionar_archive(view_medico, "medicos.json")
                                 print(f"Usuario {p["name"]} excluido com sucesso")
                             else:
-                                print("Id inexistente")
+                              print("Id inexistente")
                     elif op == "4":
                         for p in view_medico:
                             print(f"id: {p["id_medico"]}, nome do medico: {p["name"]}, especialidade: {p["especialidade"]} e crm: {p["crm"]}")
@@ -103,23 +103,25 @@ while True:
                     print("Saindo")
                     break        
     elif op == "2":   
-                op = input("Digite a data de hoje: ")
-                consultas = 0
-                for p in view_consultas:
-                    if p["data"][:len(op)] == op:
-                     consultas +=1
-                print(f"Total de consultas hoje:{consultas}")
-                print(f"Pacientes cadastrados: {len(view_pacientes)}")
-                print(f"Médicos ativos: {len(view_medico)} ")
-                finalizada = 0
-                for p in view_consultas:
-                            if p["status"] == "finalizado":
-                                finalizada +=1
-                print(f"Atendimentos finalizados hoje: {finalizada}")
+                op_dia_consulta = input("Digite a data de hoje: (DD/MM/AAAA) ")
+ 
+                consultas_hoje = 0
+                finalizadas = 0
                 canceladas = 0
-                for p in view_consultas:
-                            if p["status"] == "cancelado":
-                                canceladas +=1
-                print(f"O total de consultas canceladas hoje: {canceladas}")
-                       
-                    
+                
+                for i in view_consultas:
+                    if i["data"] == op_dia_consulta:
+                        consultas_hoje += 1
+                
+                        if i["status"] == "finalizado":
+                            finalizadas += 1
+                        elif i["status"] == "cancelado":
+                            canceladas += 1
+ 
+                print(f"----Pacientes cadastrados: {len(view_pacientes)} ---")
+                print(f"----Médicos ativos: {len(view_medico)} ---")
+                print(f"Consultas do dia: {consultas_hoje}")
+                print(f"Consultas finalizadas hoje: {finalizadas}")
+                print(f"Consultas canceladas hoje: {canceladas}")
+ 
+                   
