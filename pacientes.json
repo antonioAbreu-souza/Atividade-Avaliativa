@@ -1,18 +1,26 @@
 [
-{
+  {
     "id_paciente": 1,
     "name": "Mauricio",
-    "idade": 35,
+    "idade": "35",
     "cpf": "000000000",
     "telefone": "0000000000",
     "endereco": "Rua A, 123"
-}, 
-{
+  },
+  {
     "id_paciente": 2,
-    "name":"Rafael",
-    "idade": 19,
-    "cpf": "000000000",
-    "telefone": "0000000000",
-    "endereco": "Rua A, 123"
-}
+    "name": "Rafael",
+    "idade": "20",
+    "cpf": "123213213",
+    "telefone": "232132",
+    "endereco": "Rua do caba la"
+  },
+  {
+    "id_paciente": 3,
+    "name": "Maurirafa",
+    "idade": 10,
+    "cpf": "12031",
+    "telefone": "02130",
+    "endereco": "Rua dos caba la 2"
+  }
 ]

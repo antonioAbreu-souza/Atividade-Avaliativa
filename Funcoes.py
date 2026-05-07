@@ -1,4 +1,5 @@
 import json
+import datetime 
 def Ler_archive(arquivo):
     with open(arquivo, "r") as archive:
         resultado = json.load(archive)
@@ -208,3 +209,108 @@ def Relatórios():
     print("Consultas canceladas no período")
     print("pacientes atendidos no dia")
     
+
+
+#Unico codigo feito com IA(Vou rever e estudar melhor depois)
+def agendar_consulta(lista1, lista2, lista3):
+
+    # 1. Médico
+    for m in lista2:
+        print(f"ID: {m['id_medico']} | {m['name']} | {m['especialidade']}")
+
+    id_medico = int(input("Digite o ID do médico: "))
+
+    medico_existe = False
+    for m in lista2:
+        if m["id_medico"] == id_medico:
+            medico_existe = True
+            break
+
+    if medico_existe == False:
+        print("Médico não encontrado.")
+        return
+
+    # 2. Paciente
+    for p in lista3:
+        print(f"ID: {p['id_paciente']} | {p['name']}")
+
+    id_paciente = int(input("Digite o ID do paciente: "))
+
+    paciente_existe = False
+    for p in lista3:
+        if p["id_paciente"] == id_paciente:
+            paciente_existe = True
+            break
+
+    if paciente_existe == False:
+        print("Paciente não encontrado.")
+        return
+
+    # 3. Data (AAAA-MM-DD)
+    hoje = input("Digite a data de hoje (AAAA-MM-DD): ")
+    data = input("Digite a data (AAAA-MM-DD): ")
+
+    if data < hoje:
+        print("Não é permitido agendar em datas passadas.")
+        return
+
+    # 4. Horário
+    hora = input("Digite o horário (HH:MM): ")
+
+    # 5. Verificar conflito de horário
+    for c in lista1:
+        if c["id_medico"] == id_medico and c["data"] == data and c["hora"] == hora and c["status"] != "cancelado":
+            print("Esse médico já tem consulta nesse dia e horário.")
+            return
+
+    # 6. Salvar
+    nova = {
+        "id": len(lista1) + 1,
+        "id_paciente": id_paciente,
+        "id_medico": id_medico,
+        "data": data,
+        "hora": hora,
+        "status": "agendado"
+    }
+    lista1.append(nova)
+    Adicionar_archive(lista1, "consultas.json")
+    print("Consulta agendada com sucesso!")
+    
+ 
+ 
+
+ 
+
+def reagendar_consulta(lista1):
+
+    for p in lista1:
+        if p["status"] != "cancelado" and p["status"] != "finalizado":
+            print(f"ID: {p['id']} | Paciente ID: {p['id_paciente']} | Médico ID: {p['id_medico']} | {p['data']} {c['hora']} | {p['status']}")
+            
+    id_consulta = int(input("Digite o ID da consulta: "))
+    consulta = "nada"
+    for c in lista1:
+        if c["id"] == id_consulta:
+            consulta = c
+            break
+    if consulta == "nada":
+        print("Consulta não encontrada.")
+        return
+    if consulta["status"] == "cancelado" or consulta["status"] == "finalizado":
+        print("Essa consulta não pode ser reagendada.")
+        return
+    hoje = input("Digite a data de hoje (AAAA-MM-DD): ")
+    data = input("Nova data (AAAA-MM-DD): ")
+    if data < hoje:
+        print("Não é permitido reagendar para datas passadas.")
+        return
+    hora = input("Novo horário (HH:MM): ")
+    for c in lista1:
+        if c["id"] != id_consulta and c["id_medico"] == consulta["id_medico"] and c["data"] == data and c["hora"] == hora and c["status"] != "cancelado":
+            print("Esse médico já tem consulta nesse dia e horário.")
+            return
+    consulta["data"] = data
+    consulta["hora"] = hora
+    consulta["status"] = "reagendado"
+    Adicionar_archive(lista1, "consultas.json")
+    print("Consulta reagendada com sucesso!")

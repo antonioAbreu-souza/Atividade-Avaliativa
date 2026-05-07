@@ -98,7 +98,7 @@ while True:
                                 status += 1
                         print(f"Total de consultas canceladas: {status}")
                     elif op == "3":
-                        print(f"Total de pacientes cadastrados: {len(view_consultas)}")
+                        print(f"Total de pacientes cadastrados: {len(view_pacientes)}")
                     elif op == "4":
                         print(f"total de médicos ativos: {len(view_medico)}")
                     elif op == "5":
@@ -116,17 +116,85 @@ while True:
                 elif op =="6":
                     print("Saindo")
                     break        
-    #elif op == "2":
+    elif op == "2":
+        print("1- Pacientes")
+        print("2- Consultas")
+        print("3- Historico")
+        print("4- Relatorios")
+        op =input("digite a opção: ")
+        if op == "1":
+            print("1- Cadastrar paciente")
+            print("2- Editar paciente")
+            print("3- Buscar paciente especifico")
+            print("4- Listar todos os pacientes")
+            op = input("Digite a sua opção")
+            if op == "1":
+                name = input("nome do paciente: ")
+                idade = int(input("idade do paciente: "))
+                cpf = input("Cpf do paciente: ")       
+                phone = input("Telefone do paciente: ")
+                endereco = input("endereço do paciente")
+                id_paciente = len(view_pacientes)+1
+                dados = {"id_paciente": id_paciente,
+                    "name": name, 
+                     "idade": idade,
+                     "cpf": cpf,
+                     "telefone": phone,
+                     "endereco": endereco}
+                view_pacientes.append(dados)
+                f.Adicionar_archive(view_pacientes,"pacientes.json" )
+            elif op == "2":
+                for p in view_pacientes:
+                    print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
+                op = int(input("Digite o nome do paciente que deseja alterar: "))
+                for p in view_pacientes:
+                    if op == p["id_paciente"]:
+                        print("O que deseja alterar?")
+                        print("1- Nome do paciente")
+                        print("2- Idade do paciente")
+                        print("3- Cpf do paciente")
+                        print("4- Telefone do paciente")
+                        op = input("Digite a opção")
+                        if op == "1":
+                            name = input("Digite o novo nome: ")
+                            p["name"] = name
+                            f.Adicionar_archive(view_pacientes, "pacientes.json")
+                        elif op == "2":
+                                idade = input("Digite a nova idade")
+                                p["idade"] = idade
+                                f.Adicionar_archive(view_pacientes, "pacientes.json")
+                        elif op == "3":
+                                cpf = input("Digite o novo cpf")
+                                p["cpf"] = cpf
+                                f.Adicionar_archive(view_pacientes, "pacientes.json")
+                        elif op == "4":
+                                phone = input("Digite o novo numero de telefone: ")
+                                p["telefone"] = phone
+                                f.Adicionar_archive(view_pacientes, "pacientes.json")
+                        elif op == "5": 
+                                endereco = input("Digite o novo endereço: ")
+                                p["endereco"] = endereco
+                                f.Adicionar_archive(view_pacientes, "pacientes.json")
+            elif op == "3":
+             op = input("Digite o nome do cliente: ")
+             for p in view_pacientes:
+                if op == p["name"]:
+                    print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
+            elif op == "4":
+                for p in view_pacientes:
+                    print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")    
+        elif op == "2":
+            print("1- marcar consulta para médico: ")
+            print("2- reagendar consulta")
+            print("3- cancelar consulta")
+            print("4- confirmar presença do paciente: ")
+            print("5- listar todas as consultas do dia")
+            print("6- listar consultas futuras")
+            op1 = input("Digite a opção: ")
+            if op1 == "1":
+                f.agendar_consulta(view_consultas, view_medico, view_pacientes)
+            elif op1 == "2":
+                f.reagendar_consulta(view_consultas)
     
     
-    
-    
-    
-    
-    
-    
-    
-    elif op == "3":
-        print("oi")
-        
-                        
+  
