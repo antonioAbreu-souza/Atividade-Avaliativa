@@ -199,12 +199,15 @@ while True:
                 for p in view_pacientes:
                     print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
                 op = int(input("Digite o Id do paciente para cancelar: "))
+                print("Data de hoje")
+                data = input("Digite a data: ")
                 for p in view_consultas:
-                    if op == p["id_paciente"]:
-                        p["status"] = "cancelado"
-                        f.Adicionar_archive(view_consultas,"consultas.json")
-                    else:
-                        print("id Inexistente")
+                    if data == p["data"]:
+                        if op == p["id_paciente"]:
+                            p["status"] = "cancelado"
+                            f.Adicionar_archive(view_consultas,"consultas.json")
+                        else:
+                            print("id Inexistente")
             elif op1 == "4":
                 for p in view_pacientes:
                     print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
