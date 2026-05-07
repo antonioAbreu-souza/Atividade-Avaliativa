@@ -314,3 +314,6 @@ def reagendar_consulta(lista1):
     consulta["status"] = "reagendado"
     Adicionar_archive(lista1, "consultas.json")
     print("Consulta reagendada com sucesso!")
+    
+    
+    

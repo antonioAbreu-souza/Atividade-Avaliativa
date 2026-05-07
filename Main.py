@@ -195,6 +195,27 @@ while True:
                 f.agendar_consulta(view_consultas, view_medico, view_pacientes)
             elif op1 == "2":
                 f.reagendar_consulta(view_consultas)
-    
-    
+            elif op1 == "3":
+                for p in view_pacientes:
+                    print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
+                op = int(input("Digite o Id do paciente para cancelar: "))
+                for p in view_consultas:
+                    if op == p["id_paciente"]:
+                        p["status"] = "cancelado"
+                        f.Adicionar_archive(view_consultas,"consultas.json")
+                    else:
+                        print("id Inexistente")
+            elif op1 == "4":
+                for p in view_pacientes:
+                    print(f"Id do paciente: {p["id_paciente"]}, Nome: {p["name"]}, Idade: {p["idade"]}, cpf: {p["cpf"]} telefone: {p["telefone"]} e endereço: {p["endereco"]} ")
+                op = int(input("Digite o id do cliente para confirmar presença: "))
+                print("Data de hoje")
+                data = input("Digite a data: ")
+                for p in view_consultas:
+                    if data == p["data"]:
+                        if op == p["id_paciente"]:
+                            p["status"] = "confirmado"
+                            f.Adicionar_archive(view_consultas, "consultas.json")
+          #  elif op1 =="4":       
+                
   
