@@ -219,6 +219,5 @@ while True:
                         if op == p["id_paciente"]:
                             p["status"] = "confirmado"
                             f.Adicionar_archive(view_consultas, "consultas.json")
-          #  elif op1 =="4":       
-                
-  
+          # elif op1 =="4":       
+          
