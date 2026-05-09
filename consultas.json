@@ -13,14 +13,14 @@
     "id_medico": 1,
     "data": "25/04/2026",
     "hora": "16:00",
-    "status": "cancelado"
+    "status": "Agendado"
   },
   {
     "id": 3,
     "id_paciente": 2,
     "id_medico": 1,
     "data": "25/04/2026",
-    "hora": "15:00",
+    "hora": "17:00",
     "status": "finalizado"
   },
   {
@@ -29,6 +29,12 @@
     "id_medico": 1,
     "data": "26/04/2026",
     "hora": "14:00",
-    "status": "finalizado"
-  }
+    "status": "confirmado"
+  },
+  {"id": 5,
+    "id_paciente": 2,
+    "id_medico": 1,
+    "data": "25/04/2026",
+    "hora": "15:00",
+    "status": "cancelado"}
 ]

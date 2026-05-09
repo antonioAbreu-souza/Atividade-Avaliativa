@@ -154,6 +154,7 @@ while True:
                         print("2- Idade do paciente")
                         print("3- Cpf do paciente")
                         print("4- Telefone do paciente")
+                        print("5- endereço do paciente")
                         op = input("Digite a opção")
                         if op == "1":
                             name = input("Digite o novo nome: ")
@@ -219,5 +220,60 @@ while True:
                         if op == p["id_paciente"]:
                             p["status"] = "confirmado"
                             f.Adicionar_archive(view_consultas, "consultas.json")
-          # elif op1 =="4":       
-          
+            elif op1 =="5":  
+                print("Data de hoje")
+                data = input("Digite a data: ")
+                for p in view_consultas:
+                    if data == p["data"]:
+                        if p["status"] == "Agendado":
+                            print(f"Id do paciente: {p["id_paciente"]},Id do medico:  {p["id_medico"]} data: {p["data"]} horario: {p["hora"]} status: {p["status"]}")
+            elif op1 == "6":
+                print("Data de hoje: ")
+                data = input("Digite a data de hoje: ")
+                for p in view_consultas:
+                    if p["data"] >= data:
+                        if p["status"] == "Agendado":
+                            print(f"Id do paciente: {p["id_paciente"]},Id do medico:  {p["id_medico"]} data: {p["data"]} horario: {p["hora"]} status: {p["status"]}")
+        elif op =="3":
+            print("1- Vizualizar consultas anteriores do paciente: ")
+            print("2- ver data de atendimentos anteriores")     
+            opi = input("Digite a opção: ")
+            #if op1 == "1":
+                
+            
+            
+            
+            if opi == "2":
+                print("Data de hoje")
+                data = input("Digite a data: ")     
+                for p in view_consultas:
+                    if p["data"] < data:
+                            print(p["data"])
+
+        elif op == "4":
+            print("1- Agenda do dia")
+            print("2- Consultas canceladas no periodo")
+            print("3- Pacientes atendidos no dia")
+            op = input("Digite a opção: ")
+            if op == "1":
+                print("Data de hoje")
+                data = input("Digite a data de hoje")
+                for p in view_consultas:
+                    if data == p["data"]:
+                        print(f"Id do paciente: {p["id_paciente"]},Id do medico:  {p["id_medico"]} data: {p["data"]} horario: {p["hora"]} status: {p["status"]}")
+            elif op == "2":
+                op = input("Data do periodo que quer ver: ")
+                for p in view_consultas:
+                    if op == p["data"]:
+                        if p["status"] == "cancelado":
+                            print(f"Id do paciente: {p["id_paciente"]},Id do medico:  {p["id_medico"]} data: {p["data"]} horario: {p["hora"]} status: {p["status"]}")
+                        else:
+                            print("Nenhuma consulta foi cancelada nesse dia!")
+            elif op == "3":
+                op = input("digite a data que queira ver: ")
+                for p in view_consultas:
+                    if op == p["data"]:
+                        if p["status"] == "finalizado":
+                            print(f"Id do paciente: {p["id_paciente"]},Id do medico:  {p["id_medico"]} data: {p["data"]} horario: {p["hora"]} status: {p["status"]}")
+                        else:
+                            print("Não houve nenhum paciente finalizado!")   
